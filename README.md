@@ -1,4 +1,4 @@
-## Non-blocking switch debounce
+## Non-blocking switch debounce     {#mainpage}
 
 A non-blocking low-pass filter function used for contact switch debouncing.
 
@@ -29,7 +29,7 @@ int main(int argc,char*argv[])
 
     debounce_setup( &debounce,
                     FILTER_DEPTH,
-                    get_sw,
+                    get_switch,
                     switch_callback
                 );
 
