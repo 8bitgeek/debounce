@@ -34,12 +34,6 @@ SOFTWARE.
 
 
 
-/** ***************************************************************************
- * @brief timer.h is the source header for a platform dependent tick counter  *
- *        nominally, provides a millisecond counter.                          *
- *        debounce_tick_t abstracts away the platform dependent counter type. *
- *****************************************************************************/
-#include <timer.h>  /**< Replace with your timer tick source */
 /** **************************************************************************
  * @brief replace timer_t with your platform tick counter type               *
  *****************************************************************************/
@@ -50,7 +44,6 @@ typedef timer_tick_t  debounce_tick_t; /**< Replace w/your timer tick type */
  * @return A bool data type representing the state of the physical input.    *
  *****************************************************************************/
 typedef debounce_tick_t (*debounce_callback_timer_t)(void);
-
 
 
 
