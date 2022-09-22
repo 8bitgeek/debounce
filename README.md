@@ -56,7 +56,7 @@ int main(int argc,char*argv[])
 
     for(;;)
     {
-        debounce_service();
+        debounce_service(&debounce);
     }
 }
 
