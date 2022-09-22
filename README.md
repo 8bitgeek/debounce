@@ -50,8 +50,8 @@ int main(int argc,char*argv[])
     debounce_setup( &debounce,
                     FILTER_DEPTH,
                     read_timer_callback,
-                    state_changed_callback,
-                    read_gpio_callback
+                    read_gpio_callback,
+                    state_changed_callback
                 );
 
     for(;;)
