@@ -1,12 +1,22 @@
-{#mainpage} [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)
+## Non-blocking switch debounce general characteristics {#mainpage}
 
-## Non-blocking switch debounce     
+Repository [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)   
 
-A non-blocking low-pass filter function used for contact switch debouncing.
+A non-blocking low-pass filter function used for contact switch debouncing in embedded firmware applications.
+
+A user provided timer callback provides the millisecond counter used as the timebase.
+
+A user provieded callback provides a means to read the current hardware GPIO state.
+
+A user provided application callback to notify the application of a (debounced) change in pin state.
+
+A service routine that must be called from the main aspplication loop at a frequency equal to or greater than the user provided timer frequency.
+
+### Theory of operation
 
 The filter consists is a bit buffer word and corresponding bit mask.
 
-Upon each sample period, determined by a platform dependent counter, the physical input is sampled and shfited into the sample buffer.
+Upon each sample period, determined by a platform dependent counter ffrequency, the physical input is sampled and shfited into the sample buffer.
 
 If the sample buffer contains a mixture of 1s and 0s, then the output state is considered indeterminate, and is ignored.
 
@@ -19,7 +29,7 @@ If the application callback is non-null, the callback is executed upon each tran
 ~~~~
 #include "debounce.h"
 
-#define FILTER_DEPTH 10 /**< Specificed the depth duration of the low pass filter in ticks */
+#define FILTER_DEPTH 10 /**< Specificed the duration of the low pass filter in units of timer ticks */
 
 debounce_t debounce;    /**< structure that maintain the debounce state for the input channel */
 
@@ -49,7 +59,7 @@ int main(int argc,char*argv[])
  */
 static debounce_tick_t read_timer_callback(void)
 {
-    return my_read_millisecon_counter();
+    return my_read_millisecond_counter();
 }
 
 /**
