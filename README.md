@@ -39,7 +39,7 @@ If the application callback is non-null, the callback is executed upon each tran
 
 #define FILTER_DEPTH 10 /**< Specifices the duration of the low pass filter in units of timer ticks */
 
-debounce_t debounce;    /**< structure that maintain the debounce state for the input channel */
+debounce_t debounce;    /**< An instance that maintain the debounce state for the input channel */
 
 static debounce_tick_t read_timer_callback(void);
 static bool state_changed_callback(void);
