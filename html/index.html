@@ -111,7 +111,7 @@ Usage Example</h2>
 <div class="line"> * using a platform-specific read.</div>
 <div class="line"> * @return true if logic 1 is read, or false if logic  0 is read from the GPIO.</div>
 <div class="line"> */</div>
-<div class="line">static bool state_changed_callback(void)</div>
+<div class="line">static bool read_gpio_callback(void)</div>
 <div class="line">{</div>
 <div class="line">    /* </div>
 <div class="line">     * perform a platform-specific GPIO read and translate to a bool type </div>
@@ -123,7 +123,7 @@ Usage Example</h2>
 <div class="line"> * @brief The application callback function. Perform an application-level</div>
 <div class="line"> * action basedd on the input state transition.</div>
 <div class="line"> */ </div>
-<div class="line">static void read_gpio_callback(debounce_t* debounce)</div>
+<div class="line">static void state_changed_callback(debounce_t* debounce)</div>
 <div class="line">{</div>
 <div class="line">    if ( debounce_state(debounce) )</div>
 <div class="line">        printf(&quot;pressed&quot;);</div>

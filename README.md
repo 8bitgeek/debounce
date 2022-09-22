@@ -74,7 +74,7 @@ static debounce_tick_t read_timer_callback(void)
  * using a platform-specific read.
  * @return true if logic 1 is read, or false if logic  0 is read from the GPIO.
  */
-static bool state_changed_callback(void)
+static bool read_gpio_callback(void)
 {
     /* 
      * perform a platform-specific GPIO read and translate to a bool type 
@@ -86,7 +86,7 @@ static bool state_changed_callback(void)
  * @brief The application callback function. Perform an application-level
  * action basedd on the input state transition.
  */ 
-static void read_gpio_callback(debounce_t* debounce)
+static void state_changed_callback(debounce_t* debounce)
 {
     if ( debounce_state(debounce) )
         printf("pressed");
