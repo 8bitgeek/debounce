@@ -66,7 +66,7 @@ static debounce_tick_t read_timer_callback(void)
 /**
  * @brief A callback function that reads the current state of a GPIO input
  * using a platform-specific read.
- * @return true if logic 1 is read, or falsse if logic  0 is read from the GPIO.
+ * @return true if logic 1 is read, or false if logic  0 is read from the GPIO.
  */
 static bool state_changed_callback(void)
 {
