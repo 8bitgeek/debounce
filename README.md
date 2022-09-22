@@ -9,7 +9,7 @@ A non-blocking low-pass filter function used for contact switch debouncing in em
 
 A user provided timer callback provides the millisecond counter used as the timebase.
 
-A user provieded callback provides a means to read the current hardware GPIO state.
+A user provided callback provides a means to read the current hardware GPIO state.
 
 A user provided application callback to notify the application of a (debounced) change in pin state.
 
