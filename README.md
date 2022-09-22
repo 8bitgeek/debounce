@@ -23,7 +23,7 @@ A service routine that must be called from the main aspplication loop at a frequ
 
 The filter consists is a bit buffer word and corresponding bit mask.
 
-Upon each sample period, determined by a platform dependent counter ffrequency, the physical input is sampled and shfited into the sample buffer.
+Upon each sample period, determined by a platform dependent counter frequency, the physical input is sampled and shfited into the sample buffer.
 
 If the sample buffer contains a mixture of 1s and 0s, then the output state is considered indeterminate, and is ignored.
 
