@@ -1,6 +1,7 @@
 ## Non-blocking switch debounce general characteristics {#mainpage}
 
 Repository [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)   
+Website [https://8bitgeek.github.io/debounce](https://8bitgeek.github.io/debounce)   
 
 A non-blocking low-pass filter function used for contact switch debouncing in embedded firmware applications.
 
