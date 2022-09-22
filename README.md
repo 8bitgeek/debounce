@@ -13,7 +13,7 @@ A user provided callback provides a means to read the current hardware GPIO stat
 
 A user provided application callback to notify the application of a (debounced) change in pin state.
 
-A service routine that must be called from the main aspplication loop at a frequency equal to or greater than the user provided timer frequency.
+A service routine that must be called from the main application loop at a frequency equal to or greater than the user provided timer frequency.
 
 ### Theory of operation
 
