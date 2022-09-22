@@ -25,16 +25,27 @@ SOFTWARE.
 #include <stdbool.h>
 #include <stdint.h>
 
+
+
+
 /******************************************************************************
  * @brief timer.h is the source header for a platform dependent tick counter  *
  *        nominally, provides a millisecond counter.                          *
- *        timer_tick_t abstracts away the platform dependent counter type.    *
+ *        debounce_tick_t abstracts away the platform dependent counter type. *
  *****************************************************************************/
-#include <timer.h>
+#include <timer.h>  /**< Replace with your timer tick source */
 /*****************************************************************************
  * @brief replace timer_t with your platform tick counter type               *
  *****************************************************************************/
-typedef timer_t  timer_tick_t;
+typedef timer_tick_t  debounce_tick_t; /**< Replace w/your timer tick type */
+/*****************************************************************************
+ * @brief The debounce_callback_timer_t type defines a function callback     *
+ *        which is intended to read the timer ticks (typically millisecond). *
+ * @return A bool data type representing the state of the physical input.    *
+ *****************************************************************************/
+typedef debounce_tick_t (*debounce_callback_timer_t)(void);
+
+
 
 
 /*****************************************************************************
@@ -46,7 +57,7 @@ extern "C" {
 
 /*****************************************************************************
  * @brief The debounce_bitmask_t type defines the maximum bit-depth of the   *
- *        sample buffer temporal units according to timer_tick_t             *
+ *        sample buffer temporal units according to debounce_tick_t          *
  *****************************************************************************/
 typedef uint32_t debounce_bitmask_t;
 #define debounce_bitmask_size()    (sizeof(debounce_bitmask_t)*8)  
@@ -64,9 +75,10 @@ typedef bool (*debounce_callback_read_t)(void);
  *****************************************************************************/
 typedef struct _debounce_t
 {
+    debounce_callback_timer_t   callback_timer;
     debounce_callback_read_t    callback_read;
     void                        (*callback_event)(struct _debounce_t* debounce);
-    timer_tick_t                ticks;
+    debounce_tick_t                ticks;
     uint8_t                     filter_depth;
     bool                        state;
     debounce_bitmask_t          input_bits;
@@ -83,14 +95,15 @@ typedef void (*debounce_callback_event_t)(debounce_t* debounce);
 /*****************************************************************************
  * @brief To be called once per input to initialize state.                   *
  * @param debounce pointer to an uninitialized instance of debounce_t type.  *
- * @param filter_depth the depth of the sample buffer in timer_tick_t units  *
- *        up to a maximum of (sizeof(debounce_bitmask_t)*8) bits.            *
- * @param callback_read callback function to read the physical input         *
- * @param callback_event callback to notify application of input change      *
+ * @param filter_depth the depth of the sample buffer in debounce_tick_t     *
+ *        units up to a maximum of (sizeof(debounce_bitmask_t)*8) bits.      *
+ * @param callback_read callback function to read the GPIO input pin         *
+ * @param callback_event callbback notify application of input state change  *
  *****************************************************************************/
 extern void debounce_setup  (
                                 debounce_t* debounce, 
                                 uint8_t filter_depth,
+                                debounce_callback_timer_t   callback_timer,
                                 debounce_callback_read_t    callback_read,
                                 debounce_callback_event_t   callback_event
                             );
@@ -108,8 +121,11 @@ extern void debounce_service(debounce_t* debounce);
  *****************************************************************************/
 extern bool debounce_state  (debounce_t* debounce);
 
+/*****************************************************************************
+ * End- Diasble C++ name mangling for "C" language linkage.                  *
+ *****************************************************************************/
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+#endif 

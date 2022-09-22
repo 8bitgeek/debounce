@@ -1,8 +1,10 @@
-## Non-blocking switch debounce     {#mainpage}
+{#mainpage} Fork Me: [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)
+
+## Non-blocking switch debounce     
 
 A non-blocking low-pass filter function used for contact switch debouncing.
 
-The filter consusts is a bit buffer word and corresponding bit mask.
+The filter consists is a bit buffer word and corresponding bit mask.
 
 Upon each sample period, determined by a platform dependent counter, the physical input is sampled and shfited into the sample buffer.
 
@@ -17,20 +19,22 @@ If the application callback is non-null, the callback is executed upon each tran
 ~~~~
 #include "debounce.h"
 
-#define FILTER_DEPTH 10
+#define FILTER_DEPTH 10 /**< Specificed the depth duration of the low pass filter in ticks */
 
-debounce_t debounce;
+debounce_t debounce;    /**< structure that maintain the debounce state for the input channel */
 
-static bool get_switch(void);
-static void switch_callback(debounce_t* debounce);
+static debounce_tick_t read_timer_callback(void);
+static bool state_changed_callback(void);
+static void read_gpio_callback(debounce_t* debounce);
 
 int main(int argc,char*argv[])
 {
 
     debounce_setup( &debounce,
                     FILTER_DEPTH,
-                    get_switch,
-                    switch_callback
+                    read_timer_callback,
+                    state_changed_callback,
+                    read_gpio_callback
                 );
 
     for(;;)
@@ -39,13 +43,33 @@ int main(int argc,char*argv[])
     }
 }
 
-static bool get_switch(void)
+/* 
+ * @brief perform platform specific timer read function.
+ * @return the value of an unsigned millisecond counter.
+ */
+static debounce_tick_t read_timer_callback(void)
 {
-    /* platform dependent read pin */
-    return read_platform_pin();
+    return my_read_millisecon_counter();
 }
 
-static void switch_callback(debounce_t* debounce)
+/**
+ * @brief A callback function that reads the current state of a GPIO input
+ * using a platform-specific read.
+ * @return true if logic 1 is read, or falsse if logic  0 is read from the GPIO.
+ */
+static bool state_changed_callback(void)
+{
+    /* 
+     * perform a platform-specific GPIO read and translate to a bool type 
+     */
+    return my_read_gpio_pin() ? true : false;
+}
+
+/**
+ * @brief The application callback function. Perform an application-level
+ * action basedd on the input state transition.
+ */ 
+static void read_gpio_callback(debounce_t* debounce)
 {
     if ( debounce_state(debounce) )
         printf("pressed");

@@ -19,13 +19,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ******************************************************************************/
-#include <string.h>
 #include <debounce.h>
-
-/******************************************************************************
- * SERVICE                                                                    *
- ******************************************************************************/
-#define debounce_timer_ticks() timer_ticks()
 
 static int8_t   debounce_shift_input_bit(debounce_t* debounce, bool bit);
 static int8_t   debounce_get_input_state(debounce_t* debounce);
@@ -36,24 +30,30 @@ static void     debounce_set_bits   (debounce_bitmask_t* bitmask, uint8_t bits);
 static void     debounce_reset_bits (debounce_bitmask_t* bitmask, uint8_t bits);
 static void     debounce_inval_bits (debounce_bitmask_t* bitmask, uint8_t bits);
 
+/******************************************************************************
+ * SETUP                                                                      *
+ ******************************************************************************/
+
 extern void debounce_setup(
                             debounce_t* debounce, 
                             uint8_t filter_depth,
+                            debounce_callback_timer_t   callback_timer,
                             debounce_callback_read_t    callback_read,
                             debounce_callback_event_t   callback_event
                             )
 {
     memset(debounce,0,sizeof(debounce_t));
 
+    debounce->callback_timer = callback_timer;
     debounce->callback_read = callback_read;
     debounce->callback_event = callback_event;
 
-    debounce->filter_depth = filter_depth;
+    debounce->filter_depth = (filter_depth > debounce_bitmask_size()) ? debounce_bitmask_size() : filter_depth;
     
     debounce_set_bits( &debounce->filter_mask, debounce->filter_depth );
     debounce_inval_bits( &debounce->input_bits, debounce->filter_depth );
 
-    debounce->ticks = debounce_timer_ticks();
+    debounce->ticks = debounce->callback_timer();
 }
 
 extern bool debounce_state(debounce_t* debounce)
@@ -67,11 +67,11 @@ extern bool debounce_state(debounce_t* debounce)
 
 extern void debounce_service(debounce_t* debounce)
 {
-    if ( debounce->ticks != debounce_timer_ticks() )
+    if ( debounce->ticks != debounce->callback_timer() )
     {
         int8_t sample_state = debounce_shift_input_bit(debounce,debounce->callback_read());
 
-        debounce->ticks = debounce_timer_ticks();
+        debounce->ticks = debounce->callback_timer();
         
         if ( sample_state >= 0 )
         {

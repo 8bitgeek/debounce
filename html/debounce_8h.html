@@ -67,8 +67,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a13ef13f33929ded9a4dced3ece1edfa2"><td class="memItemLeft" align="right" valign="top">typedef timer_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a13ef13f33929ded9a4dced3ece1edfa2">timer_tick_t</a></td></tr>
-<tr class="separator:a13ef13f33929ded9a4dced3ece1edfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adceefb8b01aff832846f3d16eae30982"><td class="memItemLeft" align="right" valign="top">typedef timer_tick_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#adceefb8b01aff832846f3d16eae30982">debounce_tick_t</a></td></tr>
+<tr class="separator:adceefb8b01aff832846f3d16eae30982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5386434ebacc4e9758cb0f03ecf249"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="debounce_8h.html#adceefb8b01aff832846f3d16eae30982">debounce_tick_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a0a5386434ebacc4e9758cb0f03ecf249">debounce_callback_timer_t</a>) (void)</td></tr>
+<tr class="separator:a0a5386434ebacc4e9758cb0f03ecf249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9675884b988df79ec7719c48a0329bfc"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a9675884b988df79ec7719c48a0329bfc">debounce_bitmask_t</a></td></tr>
 <tr class="separator:a9675884b988df79ec7719c48a0329bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b12b2f26cb04302dc1475dbe592b2f"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#af6b12b2f26cb04302dc1475dbe592b2f">debounce_callback_read_t</a>) (void)</td></tr>
@@ -80,8 +82,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab685ea72b9e8237c38b79a14e5090656"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#ab685ea72b9e8237c38b79a14e5090656">debounce_setup</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce, uint8_t filter_depth, <a class="el" href="debounce_8h.html#af6b12b2f26cb04302dc1475dbe592b2f">debounce_callback_read_t</a> callback_read, <a class="el" href="debounce_8h.html#a7bc979537922d23de5f61d77340b1972">debounce_callback_event_t</a> callback_event)</td></tr>
-<tr class="separator:ab685ea72b9e8237c38b79a14e5090656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2f26015f355e1794c15bf81645859c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#adc2f26015f355e1794c15bf81645859c">debounce_setup</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce, uint8_t filter_depth, <a class="el" href="debounce_8h.html#a0a5386434ebacc4e9758cb0f03ecf249">debounce_callback_timer_t</a> callback_timer, <a class="el" href="debounce_8h.html#af6b12b2f26cb04302dc1475dbe592b2f">debounce_callback_read_t</a> callback_read, <a class="el" href="debounce_8h.html#a7bc979537922d23de5f61d77340b1972">debounce_callback_event_t</a> callback_event)</td></tr>
+<tr class="separator:adc2f26015f355e1794c15bf81645859c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#ae13c23f1441e84d88de9e9ee98d94a0d">debounce_service</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce)</td></tr>
 <tr class="separator:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d3046539798df5886ef5c472f8dc557"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a2d3046539798df5886ef5c472f8dc557">debounce_state</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce)</td></tr>
@@ -103,7 +105,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00052">52</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00063">63</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
 </div>
 </div>
@@ -120,7 +122,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00051">51</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00062">62</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
 </div>
 </div>
@@ -136,7 +138,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00081">81</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00093">93</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
 </div>
 </div>
@@ -152,7 +154,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00059">59</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00070">70</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a5386434ebacc4e9758cb0f03ecf249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5386434ebacc4e9758cb0f03ecf249">&#9670;&nbsp;</a></span>debounce_callback_timer_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="debounce_8h.html#adceefb8b01aff832846f3d16eae30982">debounce_tick_t</a>(* debounce_callback_timer_t) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00046">46</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
 </div>
 </div>
@@ -170,19 +188,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a13ef13f33929ded9a4dced3ece1edfa2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13ef13f33929ded9a4dced3ece1edfa2">&#9670;&nbsp;</a></span>timer_tick_t</h2>
+<a id="adceefb8b01aff832846f3d16eae30982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adceefb8b01aff832846f3d16eae30982">&#9670;&nbsp;</a></span>debounce_tick_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef timer_t <a class="el" href="debounce_8h.html#a13ef13f33929ded9a4dced3ece1edfa2">timer_tick_t</a></td>
+          <td class="memname">typedef timer_tick_t <a class="el" href="debounce_8h.html#adceefb8b01aff832846f3d16eae30982">debounce_tick_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>&lt; Replace with your timer tick source Replace w/your timer tick type </p>
 
-<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00037">37</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00040">40</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
 </div>
 </div>
@@ -207,8 +226,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab685ea72b9e8237c38b79a14e5090656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab685ea72b9e8237c38b79a14e5090656">&#9670;&nbsp;</a></span>debounce_setup()</h2>
+<a id="adc2f26015f355e1794c15bf81645859c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2f26015f355e1794c15bf81645859c">&#9670;&nbsp;</a></span>debounce_setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,6 +243,12 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>filter_depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="debounce_8h.html#a0a5386434ebacc4e9758cb0f03ecf249">debounce_callback_timer_t</a>&#160;</td>
+          <td class="paramname"><em>callback_timer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -245,7 +270,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00039">39</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00037">37</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
 
 </div>
 </div>
