@@ -1,4 +1,4 @@
-{#mainpage} Fork Me: [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)
+{#mainpage} [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)
 
 ## Non-blocking switch debounce     
 
