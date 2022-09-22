@@ -1,7 +1,9 @@
-## Non-blocking switch debounce general characteristics {#mainpage}
+## A low-pass filter switch debouncer function for GPIO inputs {#mainpage}
 
 Repository [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)   
 Website [https://8bitgeek.github.io/debounce](https://8bitgeek.github.io/debounce)   
+
+### Non-blocking switch debouncer general characteristics 
 
 A non-blocking low-pass filter function used for contact switch debouncing in embedded firmware applications.
 
@@ -14,6 +16,10 @@ A user provided application callback to notify the application of a (debounced) 
 A service routine that must be called from the main aspplication loop at a frequency equal to or greater than the user provided timer frequency.
 
 ### Theory of operation
+
+![debounce-button image](debounce-button.png)
+
+![debounce image](debounce.png)
 
 The filter consists is a bit buffer word and corresponding bit mask.
 

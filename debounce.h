@@ -1,5 +1,11 @@
-/******************************************************************************
- Copyright (c) 2021 Mike Sharkey <mike@8bitgeek.net>
+/** ****************************************************************************
+ @file debounce.h
+ @author Mike Sharkey (mike@8bitgeek.net)
+ @brief Switch debouncer function for GPIO inputs
+ @version 0.1
+ @date 2022-09-22
+ 
+ @copyright Copyright (c) 2021 Mike Sharkey <mike@8bitgeek.net>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

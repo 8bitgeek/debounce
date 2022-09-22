@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Debounce: Non-blocking switch debounce general characteristics</title>
+<title>Debounce: Switch debouncer function for GPIO inputs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -41,25 +41,35 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Non-blocking switch debounce general characteristics </div>  </div>
+<div class="title">Switch debouncer function for GPIO inputs </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Repository <a href="https://github.com/8bitgeek/debounce">https://github.com/8bitgeek/debounce</a> <br  />
  Website <a href="https://8bitgeek.github.io/debounce">https://8bitgeek.github.io/debounce</a> <br  />
 </p>
+<h2><a class="anchor" id="autotoc_md0"></a>
+Non-blocking switch debounce general characteristics</h2>
 <p>A non-blocking low-pass filter function used for contact switch debouncing in embedded firmware applications.</p>
 <p>A user provided timer callback provides the millisecond counter used as the timebase.</p>
 <p>A user provieded callback provides a means to read the current hardware GPIO state.</p>
 <p>A user provided application callback to notify the application of a (debounced) change in pin state.</p>
 <p>A service routine that must be called from the main aspplication loop at a frequency equal to or greater than the user provided timer frequency.</p>
-<h2><a class="anchor" id="autotoc_md0"></a>
+<h2><a class="anchor" id="autotoc_md1"></a>
 Theory of operation</h2>
-<p>The filter consists is a bit buffer word and corresponding bit mask.</p>
+<div class="image">
+<img src="debounce-button.png" alt=""/>
+<div class="caption">
+debounce-button image</div></div>
+   <div class="image">
+<img src="debounce.png" alt=""/>
+<div class="caption">
+debounce image</div></div>
+   <p>The filter consists is a bit buffer word and corresponding bit mask.</p>
 <p>Upon each sample period, determined by a platform dependent counter ffrequency, the physical input is sampled and shfited into the sample buffer.</p>
 <p>If the sample buffer contains a mixture of 1s and 0s, then the output state is considered indeterminate, and is ignored.</p>
 <p>When the sample buffer transitions to either all 1s or all 0s, then the output state transitions accordingly.</p>
 <p>If the application callback is non-null, the callback is executed upon each transition of filtered input state.</p>
-<h2><a class="anchor" id="autotoc_md1"></a>
+<h2><a class="anchor" id="autotoc_md2"></a>
 Usage Example</h2>
 <div class="fragment"><div class="line">#include &quot;debounce.h&quot;</div>
 <div class="line"> </div>
@@ -99,7 +109,7 @@ Usage Example</h2>
 <div class="line">/**</div>
 <div class="line"> * @brief A callback function that reads the current state of a GPIO input</div>
 <div class="line"> * using a platform-specific read.</div>
-<div class="line"> * @return true if logic 1 is read, or falsse if logic  0 is read from the GPIO.</div>
+<div class="line"> * @return true if logic 1 is read, or false if logic  0 is read from the GPIO.</div>
 <div class="line"> */</div>
 <div class="line">static bool state_changed_callback(void)</div>
 <div class="line">{</div>
