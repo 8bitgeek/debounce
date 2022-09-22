@@ -35,6 +35,7 @@ If the application callback is non-null, the callback is executed upon each tran
 
 ~~~~
 #include "debounce.h"
+#include <my_timer.h>
 
 #define FILTER_DEPTH 10 /**< Specificed the duration of the low pass filter in units of timer ticks */
 
