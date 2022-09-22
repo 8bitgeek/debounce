@@ -53,10 +53,13 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adc2f26015f355e1794c15bf81645859c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8c.html#adc2f26015f355e1794c15bf81645859c">debounce_setup</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce, uint8_t filter_depth, <a class="el" href="debounce_8h.html#a0a5386434ebacc4e9758cb0f03ecf249">debounce_callback_timer_t</a> callback_timer, <a class="el" href="debounce_8h.html#af6b12b2f26cb04302dc1475dbe592b2f">debounce_callback_read_t</a> callback_read, <a class="el" href="debounce_8h.html#a7bc979537922d23de5f61d77340b1972">debounce_callback_event_t</a> callback_event)</td></tr>
+<tr class="memdesc:adc2f26015f355e1794c15bf81645859c"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be called once per input to initialize state. *.  <a href="debounce_8c.html#adc2f26015f355e1794c15bf81645859c">More...</a><br /></td></tr>
 <tr class="separator:adc2f26015f355e1794c15bf81645859c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d3046539798df5886ef5c472f8dc557"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8c.html#a2d3046539798df5886ef5c472f8dc557">debounce_state</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce)</td></tr>
+<tr class="memdesc:a2d3046539798df5886ef5c472f8dc557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will always maintain the last filtered input state. *.  <a href="debounce_8c.html#a2d3046539798df5886ef5c472f8dc557">More...</a><br /></td></tr>
 <tr class="separator:a2d3046539798df5886ef5c472f8dc557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8c.html#ae13c23f1441e84d88de9e9ee98d94a0d">debounce_service</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce)</td></tr>
+<tr class="memdesc:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be called regularly in a non-blocking loop. *.  <a href="debounce_8c.html#ae13c23f1441e84d88de9e9ee98d94a0d">More...</a><br /></td></tr>
 <tr class="separator:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -75,6 +78,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>To be called regularly in a non-blocking loop. *. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounce</td><td>pointer to a debounce_t type that has been initialized. * </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00068">68</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
 
@@ -124,6 +136,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>To be called once per input to initialize state. *. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounce</td><td>pointer to an uninitialized instance of debounce_t type. * </td></tr>
+    <tr><td class="paramname">filter_depth</td><td>the depth of the sample buffer in debounce_tick_t * units up to a maximum of (sizeof(debounce_bitmask_t)*8) bits. * </td></tr>
+    <tr><td class="paramname">callback_timer</td><td>callback function to read timer tick counter * </td></tr>
+    <tr><td class="paramname">callback_read</td><td>callback function to read the GPIO input pin * </td></tr>
+    <tr><td class="paramname">callback_event</td><td>callbback notify application of input state change * </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00037">37</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
 
 </div>
@@ -143,6 +168,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Will always maintain the last filtered input state. *. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounce</td><td>pointer to a debounce_t type that has been initialized. * </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The filtered input state * </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00059">59</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
 

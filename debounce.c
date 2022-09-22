@@ -1,5 +1,5 @@
 /******************************************************************************
- Copyright (c) 2021 Mike SHarkey <mike@8bitgeek.net>
+ Copyright (c) 2021 Mike Sharkey <mike@8bitgeek.net>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

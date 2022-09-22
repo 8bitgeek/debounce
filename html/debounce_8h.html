@@ -58,6 +58,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__debounce__t.html">_debounce_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The debounce_t type maintains the state of a single input * One instance required per input *.  <a href="struct__debounce__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -68,25 +69,34 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:adceefb8b01aff832846f3d16eae30982"><td class="memItemLeft" align="right" valign="top">typedef timer_tick_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#adceefb8b01aff832846f3d16eae30982">debounce_tick_t</a></td></tr>
+<tr class="memdesc:adceefb8b01aff832846f3d16eae30982"><td class="mdescLeft">&#160;</td><td class="mdescRight">timer.h is the source header for a platform dependent tick counter * nominally, provides a millisecond counter. * debounce_tick_t abstracts away the platform dependent counter type. *  <a href="debounce_8h.html#adceefb8b01aff832846f3d16eae30982">More...</a><br /></td></tr>
 <tr class="separator:adceefb8b01aff832846f3d16eae30982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a5386434ebacc4e9758cb0f03ecf249"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="debounce_8h.html#adceefb8b01aff832846f3d16eae30982">debounce_tick_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a0a5386434ebacc4e9758cb0f03ecf249">debounce_callback_timer_t</a>) (void)</td></tr>
+<tr class="memdesc:a0a5386434ebacc4e9758cb0f03ecf249"><td class="mdescLeft">&#160;</td><td class="mdescRight">The debounce_callback_timer_t type defines a function callback * which is intended to read the timer ticks (typically millisecond). *.  <a href="debounce_8h.html#a0a5386434ebacc4e9758cb0f03ecf249">More...</a><br /></td></tr>
 <tr class="separator:a0a5386434ebacc4e9758cb0f03ecf249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9675884b988df79ec7719c48a0329bfc"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a9675884b988df79ec7719c48a0329bfc">debounce_bitmask_t</a></td></tr>
+<tr class="memdesc:a9675884b988df79ec7719c48a0329bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The debounce_bitmask_t type defines the maximum bit-depth of the * sample buffer temporal units according to debounce_tick_t *.  <a href="debounce_8h.html#a9675884b988df79ec7719c48a0329bfc">More...</a><br /></td></tr>
 <tr class="separator:a9675884b988df79ec7719c48a0329bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b12b2f26cb04302dc1475dbe592b2f"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#af6b12b2f26cb04302dc1475dbe592b2f">debounce_callback_read_t</a>) (void)</td></tr>
+<tr class="memdesc:af6b12b2f26cb04302dc1475dbe592b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The debounce_callback_read_t type defines a function callback * which is intended to read the current state of the switch. *.  <a href="debounce_8h.html#af6b12b2f26cb04302dc1475dbe592b2f">More...</a><br /></td></tr>
 <tr class="separator:af6b12b2f26cb04302dc1475dbe592b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb958ad7598725c791c1088da89fce58"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__debounce__t.html">_debounce_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a></td></tr>
+<tr class="memdesc:afb958ad7598725c791c1088da89fce58"><td class="mdescLeft">&#160;</td><td class="mdescRight">The debounce_t type maintains the state of a single input * One instance required per input *.  <a href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">More...</a><br /></td></tr>
 <tr class="separator:afb958ad7598725c791c1088da89fce58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc979537922d23de5f61d77340b1972"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a7bc979537922d23de5f61d77340b1972">debounce_callback_event_t</a>) (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce)</td></tr>
+<tr class="memdesc:a7bc979537922d23de5f61d77340b1972"><td class="mdescLeft">&#160;</td><td class="mdescRight">The debounce_callback_event_t type defines a function callback * which is intended notify the application upon a change in state *.  <a href="debounce_8h.html#a7bc979537922d23de5f61d77340b1972">More...</a><br /></td></tr>
 <tr class="separator:a7bc979537922d23de5f61d77340b1972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adc2f26015f355e1794c15bf81645859c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#adc2f26015f355e1794c15bf81645859c">debounce_setup</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce, uint8_t filter_depth, <a class="el" href="debounce_8h.html#a0a5386434ebacc4e9758cb0f03ecf249">debounce_callback_timer_t</a> callback_timer, <a class="el" href="debounce_8h.html#af6b12b2f26cb04302dc1475dbe592b2f">debounce_callback_read_t</a> callback_read, <a class="el" href="debounce_8h.html#a7bc979537922d23de5f61d77340b1972">debounce_callback_event_t</a> callback_event)</td></tr>
+<tr class="memdesc:adc2f26015f355e1794c15bf81645859c"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be called once per input to initialize state. *.  <a href="debounce_8h.html#adc2f26015f355e1794c15bf81645859c">More...</a><br /></td></tr>
 <tr class="separator:adc2f26015f355e1794c15bf81645859c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#ae13c23f1441e84d88de9e9ee98d94a0d">debounce_service</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce)</td></tr>
+<tr class="memdesc:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be called regularly in a non-blocking loop. *.  <a href="debounce_8h.html#ae13c23f1441e84d88de9e9ee98d94a0d">More...</a><br /></td></tr>
 <tr class="separator:ae13c23f1441e84d88de9e9ee98d94a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d3046539798df5886ef5c472f8dc557"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debounce_8h.html#a2d3046539798df5886ef5c472f8dc557">debounce_state</a> (<a class="el" href="debounce_8h.html#afb958ad7598725c791c1088da89fce58">debounce_t</a> *debounce)</td></tr>
+<tr class="memdesc:a2d3046539798df5886ef5c472f8dc557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will always maintain the last filtered input state. *.  <a href="debounce_8h.html#a2d3046539798df5886ef5c472f8dc557">More...</a><br /></td></tr>
 <tr class="separator:a2d3046539798df5886ef5c472f8dc557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -122,6 +132,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The debounce_bitmask_t type defines the maximum bit-depth of the * sample buffer temporal units according to debounce_tick_t *. </p>
+<hr  />
+<p> Diasble C++ name mangling for "C" language linkage. * </p><hr  />
+ 
 <p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00062">62</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
 </div>
@@ -137,6 +151,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The debounce_callback_event_t type defines a function callback * which is intended notify the application upon a change in state *. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounce</td><td>pointer. Call <a class="el" href="debounce_8c.html#a2d3046539798df5886ef5c472f8dc557">debounce_state()</a> within callback. * </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00093">93</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
@@ -154,6 +177,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The debounce_callback_read_t type defines a function callback * which is intended to read the current state of the switch. *. </p>
+<hr  />
+ <dl class="section return"><dt>Returns</dt><dd>A bool data type representing the state of the physical input. * </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00070">70</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
 </div>
@@ -169,6 +196,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The debounce_callback_timer_t type defines a function callback * which is intended to read the timer ticks (typically millisecond). *. </p>
+<hr  />
+ <dl class="section return"><dt>Returns</dt><dd>A bool data type representing the state of the physical input. * </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00046">46</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
@@ -186,6 +217,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The debounce_t type maintains the state of a single input * One instance required per input *. </p>
+<hr  />
+ 
 </div>
 </div>
 <a id="adceefb8b01aff832846f3d16eae30982"></a>
@@ -199,7 +233,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>&lt; Replace with your timer tick source Replace w/your timer tick type </p>
+
+<p>timer.h is the source header for a platform dependent tick counter * nominally, provides a millisecond counter. * debounce_tick_t abstracts away the platform dependent counter type. * </p>
+<hr  />
+<p> &lt; Replace with your timer tick source </p><hr  />
+<p>replace timer_t with your platform tick counter type * Replace w/your timer tick type </p>
 
 <p class="definition">Definition at line <a class="el" href="debounce_8h_source.html#l00040">40</a> of file <a class="el" href="debounce_8h_source.html">debounce.h</a>.</p>
 
@@ -221,6 +259,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>To be called regularly in a non-blocking loop. *. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounce</td><td>pointer to a debounce_t type that has been initialized. * </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00068">68</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
 
@@ -270,6 +317,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>To be called once per input to initialize state. *. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounce</td><td>pointer to an uninitialized instance of debounce_t type. * </td></tr>
+    <tr><td class="paramname">filter_depth</td><td>the depth of the sample buffer in debounce_tick_t * units up to a maximum of (sizeof(debounce_bitmask_t)*8) bits. * </td></tr>
+    <tr><td class="paramname">callback_timer</td><td>callback function to read timer tick counter * </td></tr>
+    <tr><td class="paramname">callback_read</td><td>callback function to read the GPIO input pin * </td></tr>
+    <tr><td class="paramname">callback_event</td><td>callbback notify application of input state change * </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00037">37</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
 
 </div>
@@ -289,6 +349,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Will always maintain the last filtered input state. *. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounce</td><td>pointer to a debounce_t type that has been initialized. * </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The filtered input state * </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="debounce_8c_source.html#l00059">59</a> of file <a class="el" href="debounce_8c_source.html">debounce.c</a>.</p>
 
