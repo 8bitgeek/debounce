@@ -1,6 +1,8 @@
 ## A low-pass filter switch debouncer function for GPIO inputs {#mainpage}
 
-Repository [https://github.com/8bitgeek/debounce](https://github.com/8bitgeek/debounce)   
+## NOTE REPOSITORY HAS MOVED
+
+Repository [https://bitbucket.org/8bitgeek/debounce](https://bitbucket.org/8bitgeek/debounce)   
 Website [https://8bitgeek.github.io/debounce](https://8bitgeek.github.io/debounce)   
 
 ### Non-blocking switch debouncer general characteristics 
